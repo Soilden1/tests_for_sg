@@ -20,19 +20,20 @@ public class FavoritesTests extends TestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
     private final AccordionComponent accordion = new AccordionComponent();
+    private final TestData testData = new TestData();
 
     @Disabled
     @Test
     @DisplayName("Добавление товара в избранное")
     public void addToFavoritesTest() {
         placesPage.openPage()
-                .authorizationWithMailRu("vanyaalekseev77@mail.ru", "alexvan77KSQ")
-                .selectCity("Moscow") //Москва
-                .findPlaceOrCompany("Останкинская башня")
+                .authorizationWithMailRu(testData.login, testData.password)
+                .selectCity(testData.city)
+                .findPlaceOrCompany(testData.company)
                 .clickFavoritesButton();
 
-        accordion.goToFavorites().checkPlaceOrCompany("Останкинская башня")
-                .selectCompany("Останкинская башня")
+        accordion.goToFavorites().checkPlaceOrCompany(testData.company)
+                .selectCompany(testData.company)
                 .clickFavoritesButton();
     }
 }

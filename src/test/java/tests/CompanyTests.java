@@ -17,16 +17,17 @@ import static io.qameta.allure.SeverityLevel.CRITICAL;
 public class CompanyTests extends TestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
+    private final TestData testData = new TestData();
 
     @Test
     @DisplayName("Просмотр карточки компании")
     public void viewCompanyCardTest() {
         placesPage.openPage()
-                .selectCity("Moscow") //Москва
-                .checkCity("Moscow")
-                .selectCategory("Museums") //Музеи
-                .selectCompany("Останкинская башня")
-                .checkTitle("Останкинская башня")
+                .selectCity(testData.city)
+                .checkCity(testData.city)
+                .selectCategory(testData.categoryMuseums)
+                .selectCompany(testData.company)
+                .checkTitle(testData.company)
                 .viewCompanyCard();
     }
 }

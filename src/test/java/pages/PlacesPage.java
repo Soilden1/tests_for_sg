@@ -25,7 +25,7 @@ public class PlacesPage {
     @Step("Открыть страницу регистрации")
     public PlacesPage openPage() {
         open("");
-        headerTitle.shouldHave(text("Places and services")); //Места и услуги Places and services
+        headerTitle.shouldHave(text("Places and services")); //Места и услуги
         return this;
     }
 

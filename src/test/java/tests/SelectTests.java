@@ -17,26 +17,27 @@ import static io.qameta.allure.SeverityLevel.*;
 public class SelectTests extends TestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
+    private final TestData testData = new TestData();
 
     @Test
     @DisplayName("Выбрать город")
     public void selectCityTest() {
         placesPage.openPage()
-                .selectCity("Moscow") //Москва
-                .checkCity("Moscow");
+                .selectCity(testData.city)
+                .checkCity(testData.city);
     }
 
     @Test
     @DisplayName("Выбор несуществующего города")
     public void selectInvalidCityTest() {
         placesPage.openPage()
-                .selectNotExistCity("abcdefgsa");
+                .selectNotExistCity(testData.invalidCity);
     }
 
     @Test
     @DisplayName("Выбор категории")
     public void selectCategoryTest() {
         placesPage.openPage()
-                .selectCategory("Pharmacies"); //Аптеки
+                .selectCategory(testData.categoryPharmacies);
     }
 }

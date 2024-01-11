@@ -20,13 +20,14 @@ public class AuthorizationTests extends TestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
     private final AccordionComponent accordion = new AccordionComponent();
+    private final TestData testData = new TestData();
 
     @Disabled
     @Test
     @DisplayName("Авторизация с валидными данными")
     public void authorizationTest() {
         placesPage.openPage()
-                .authorizationWithMailRu("artemnikiforov312@mail.ru", "dsaki1ll3lkS");
+                .authorizationWithMailRu(testData.login, testData.password);
 
         accordion.goToProfile();
     }

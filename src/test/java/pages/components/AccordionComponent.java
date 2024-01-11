@@ -10,14 +10,13 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AccordionComponent {
 
-    private final SelenideElement places = $("[data-qa='Места']"),
+    private final SelenideElement places = $("[data-qa='Places']"), //Места
             news = $("[data-qa='News']"), //Новости
             cards = $("[data-qa='Cards']"), //Карты
             orders = $("[data-qa='Purchases']"), //Покупки
             favorites = $("[data-qa='Favorites']"), //Избранное
             contacts = $("[data-qa='Chats']"), //Чаты
             feedback = $("[data-qa='Reviews']"), //Отзывы
-            //login = $("[data-name='profile']"), //Войти
             profile = $("[data-name='profile']"); //Профиль
 
     @Step("Перейти на страницу 'Места'")
