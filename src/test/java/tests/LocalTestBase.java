@@ -18,7 +18,7 @@ public class LocalTestBase {
         Configuration.baseUrl = "https://sabyget.ru/";
         Configuration.browserSize = "1920x1080";
         Configuration.browser = "chrome";
-        Configuration.holdBrowserOpen = false;
+        Configuration.holdBrowserOpen = true;
         Configuration.timeout = 5000;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());

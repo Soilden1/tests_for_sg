@@ -13,7 +13,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
-public class RemoteTestBase {
+public class TestBase {
 
     @BeforeAll
     static void setUp() {

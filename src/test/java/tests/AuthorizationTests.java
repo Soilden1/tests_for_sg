@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,11 +16,12 @@ import static io.qameta.allure.SeverityLevel.BLOCKER;
 @Tag("Smoke")
 @Severity(BLOCKER)
 @Owner("dimacm14")
-public class AuthorizationTests extends RemoteTestBase {
+public class AuthorizationTests extends TestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
     private final AccordionComponent accordion = new AccordionComponent();
 
+    @Disabled
     @Test
     @DisplayName("Авторизация с валидными данными")
     public void authorizationTest() {

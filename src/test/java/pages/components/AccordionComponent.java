@@ -11,13 +11,13 @@ import static com.codeborne.selenide.Selenide.$;
 public class AccordionComponent {
 
     private final SelenideElement places = $("[data-qa='Места']"),
-            news = $("[data-qa='Новости']"),
-            cards = $("[data-qa='Карты']"),
-            orders = $("[data-qa=\"Покупки\"]"),
-            favorites = $("[data-qa=\"Favorites\"]"), //Избранное
-            contacts = $("[data-qa=\"Чаты\"]"),
-            feedback = $("[data-qa=\"Отзывы\"]"),
-            login = $("[data-name='profile']"), //Войти
+            news = $("[data-qa='News']"), //Новости
+            cards = $("[data-qa='Cards']"), //Карты
+            orders = $("[data-qa='Purchases']"), //Покупки
+            favorites = $("[data-qa='Favorites']"), //Избранное
+            contacts = $("[data-qa='Chats']"), //Чаты
+            feedback = $("[data-qa='Reviews']"), //Отзывы
+            //login = $("[data-name='profile']"), //Войти
             profile = $("[data-name='profile']"); //Профиль
 
     @Step("Перейти на страницу 'Места'")
@@ -26,9 +26,9 @@ public class AccordionComponent {
         return new PlacesPage();
     }
 
-    @Step("Нажать на кнопку 'Войти' для авторизации")
+    @Step("Нажать на кнопку 'Профиль' для авторизации")
     public void goToLogin() {
-        login.click();
+        profile.click();
     }
 
     @Step("Перейти на страницу 'Профиль'")

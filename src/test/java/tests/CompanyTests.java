@@ -14,7 +14,7 @@ import static io.qameta.allure.SeverityLevel.CRITICAL;
 @Tag("Smoke")
 @Severity(CRITICAL)
 @Owner("dimacm14")
-public class CompanyTests extends RemoteTestBase {
+public class CompanyTests extends TestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
 

@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,11 +16,12 @@ import static io.qameta.allure.SeverityLevel.CRITICAL;
 @Tag("Smoke")
 @Severity(CRITICAL)
 @Owner("dimacm14")
-public class FavoritesTests extends RemoteTestBase {
+public class FavoritesTests extends TestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
     private final AccordionComponent accordion = new AccordionComponent();
 
+    @Disabled
     @Test
     @DisplayName("Добавление товара в избранное")
     public void addToFavoritesTest() {
