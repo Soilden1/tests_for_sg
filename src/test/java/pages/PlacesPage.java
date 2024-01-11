@@ -17,10 +17,11 @@ public class PlacesPage {
 
     private final SelenideElement headerTitle = $(".controls-margin_right-s"),
             selectCityButton = $(".sg-cityButton"),
-            cityInput = $("[type='text']"),
+            cityInput = $(".ClassRegionPopup__headerContainer").$("[type='text']"),
             itemsContainer = $("[data-qa='items-container']"),
             categoriesList = $(".ws-flexbox"),
             findInput = $("[type='text']");
+
     @Step("Открыть страницу регистрации")
     public PlacesPage openPage() {
         open("");
@@ -51,7 +52,7 @@ public class PlacesPage {
         cityInput.setValue(notExistCity).pressEnter();
         sleep(1000);
         step("Проверить наличие сообщения об отсутствии найденных записей", () ->
-                $("[data-qa='cell']").shouldHave(text("No records found"))); //Не найдено ни одной записи
+                $("[data-qa='hint-EmptyView__title']").shouldHave(text("No records found"))); //Не найдено ни одной записи
         return this;
     }
 
