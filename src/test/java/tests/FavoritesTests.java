@@ -27,7 +27,7 @@ public class FavoritesTests extends TestBase {
     public void addToFavoritesTest() {
         placesPage.openPage()
                 .authorizationWithMailRu("vanyaalekseev77@mail.ru", "alexvan77KSQ")
-                .selectCity("Москва")
+                .selectCity("Moscow") //Москва
                 .findPlaceOrCompany("Останкинская башня")
                 .clickFavoritesButton();
 

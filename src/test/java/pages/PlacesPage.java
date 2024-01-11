@@ -51,7 +51,7 @@ public class PlacesPage {
         cityInput.setValue(notExistCity).pressEnter();
         sleep(1000);
         step("Проверить наличие сообщения об отсутствии найденных записей", () ->
-                $("[data-qa='hint-EmptyView__title']").shouldHave(text("No records found"))); //Не найдено ни одной записи
+                $("[data-qa='cell']").shouldHave(text("No records found"))); //Не найдено ни одной записи
         return this;
     }
 
