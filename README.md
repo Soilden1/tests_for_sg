@@ -46,7 +46,7 @@ gradle clean test
 
 ###  :rocket: Удаленный запуск (в Jenkins):
 <p align="center">
-<img title="Jenkins" src="media/video/Jenkins.jpg">
+<img title="Jenkins" src="media/images/jenkins.jpg">
 </p>
 
 1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/022-Soilden-tests_for_sg/">проект</a>
@@ -59,41 +59,41 @@ gradle clean test
 
 #### :black_small_square: Основной отчет
 <p align="center">
-<img title="Allure Report Dashboards" src="media/video/allureReport.jpg">
+<img title="Allure Report Dashboards" src="media/images/allureReport.jpg">
 </p>
 
 #### :black_small_square: Тесты
 <p align="center">
-<img title="Allure Report Tests" src="images/a.png">
+<img title="Allure Report Tests" src="media/images/tests.jpg">
 </p>
 
 ### <img src="media/logo/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure TestOps</a> <a target="_blank" href="https://allure.autotests.cloud/project/3956/dashboards"> TestOps</a>
 
 #### :black_small_square: Allure отчет
 <p align="center">
-<img title="Allure TestOps Dashboards" src="images/allureReport.png">
+<img title="Allure TestOps Dashboards" src="media/images/allureReport.png">
 </p>
 
 #### :black_small_square: Тесты в Allure TestOps
 <p align="center">
-<img title="Allure TestOps Tests" src="images/allureTests.png">
+<img title="Allure TestOps Tests" src="media/images/allureTests.png">
 </p>
 
 
 #### :black_small_square: Пример ручных тестов
 <p align="center">
-  <img title="Allure TestOps manual tests" src="images/manual.png">
+  <img title="Allure TestOps manual tests" src="media/images/manual.png">
 </p>
 
 ## <img src="media/logo/Jira.svg" width="25" height="25" alt="Jira"/>Интеграция с Jira</a>
 <p align="center">
-  <img title="Allure TestOps overview" src="images/jira.png">
+  <img title="Allure TestOps overview" src="media/images/jira.png">
 </p>
 
 ## <img src="media/logo/Telegram.svg" width="25" height="25"  alt="Telegram"/>Telegram уведомления</a>
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/telegram.png">
+<img title="Allure Overview Dashboard" src="media/images/telegram.png">
 </p>
 
 ##  <img src="media/logo/Selenoid.svg" width="25" height="25" alt="Selenoid"/>Selenoid видеозапись тестов</a>
