@@ -55,7 +55,7 @@ gradle clean test
 
 ## :triangular_flag_on_post: Allure отчеты:
 
-### <img src="media/logo/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/022-Soilden-tests_for_sg/8/allure/"> Allure Report</a>
+### <img src="media/logo/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в </a> <a target="_blank" href="https://jenkins.autotests.cloud/job/022-Soilden-tests_for_sg/8/allure/"> Allure Report</a>
 
 #### :black_small_square: Основной отчет
 <p align="center">
@@ -67,7 +67,7 @@ gradle clean test
 <img title="Allure Report Tests" src="media/images/tests.jpg">
 </p>
 
-### <img src="media/logo/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure TestOps</a> <a target="_blank" href="https://allure.autotests.cloud/project/3956/dashboards"> TestOps</a>
+### <img src="media/logo/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure </a> <a target="_blank" href="https://allure.autotests.cloud/project/3956/dashboards"> TestOps</a>
 
 #### :black_small_square: Allure отчет
 <p align="center">
