@@ -1,5 +1,5 @@
 
-# <a href="https://www.wildberries.ru/"><img src="images/logo.png" width="55" height="55"/></a> Проект по автоматизации тестирования для <a href="https://sabyget.ru/">Sabyget</a>.</h1>
+# <a href="https://sabyget.ru/"><img src="images/logo.png" width="55" height="55"/></a> Проект по автоматизации тестирования для <a href="https://sabyget.ru/">Sabyget.ru</a>.</h1>
 
 ## :technologist: Технологии и инструменты
 
