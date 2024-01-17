@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CategoryPage {
 
-    SelenideElement companyInput = $(byTagName("input")),
+    private final SelenideElement companyInput = $(byTagName("input")),
             companyList = $("[data-qa='items-container']");
 
     @Step("Выбрать компанию")

@@ -26,8 +26,40 @@ public class CompanyTests extends TestBase {
                 .selectCity(testData.city)
                 .checkCity(testData.city)
                 .selectCategory(testData.categoryMuseums)
-                .selectCompany(testData.company)
-                .checkTitle(testData.company)
+                .selectCompany(testData.companyMuseum)
+                .checkTitle(testData.companyMuseum)
                 .viewCompanyCard();
+    }
+
+    @Test
+    @DisplayName("Отображается маркер на карте при просмотре страницы компании")
+    public void checkCompanyMarker() {
+        placesPage.openPage()
+                .selectCity(testData.city)
+                .selectCategory(testData.categoryCafe)
+                .selectCompany(testData.companyCafe)
+                .checkMarker();
+    }
+
+    @Test
+    @DisplayName("Просмотр отзывов")
+    public void showFeedBackTest() {
+        placesPage.openPage()
+                .selectCity(testData.city)
+                .selectCategory(testData.categoryPharmacies)
+                .selectCompany(testData.companyPharmacies)
+                .goToFeedback()
+                .checkFeedbackList();
+    }
+
+    @Test
+    @DisplayName("Просмотр меню")
+    public void showMenuTest() {
+        placesPage.openPage()
+                .selectCity(testData.city)
+                .selectCategory(testData.categoryCafe)
+                .selectCompany(testData.companyCafe)
+                .goToMenu()
+                .checkMenuList();
     }
 }

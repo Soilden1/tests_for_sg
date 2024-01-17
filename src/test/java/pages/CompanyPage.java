@@ -2,25 +2,28 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Assertions;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class CompanyPage {
 
-    SelenideElement companyCard = $(".sg-Contractor__readOnly-off"),
+    private final SelenideElement companyCard = $(".sg-Contractor__readOnly-off"),
             companyTitle = $("[data-qa='headers-Header__mainText']"),
-            addToFavoritesButton = $("[name='toolbar']");
+            feedbackButton = $("[name='tabfeedback']"),
+            menuButton = $("[data-name='catalog']"),
+            map = $(".mapboxgl-map");
 
     @Step("Открыть информационную карту компании")
     public CompanyPage viewCompanyCard() {
         companyCard.click();
-        sleep(1000);
         step("Проверить открытие информационной карты компании", () ->
-                Assertions.assertTrue($("[templatename='SabyGetContractor/widget:Card']").isDisplayed()));
+                $("[templatename='SabyGetContractor/widget:Card']").shouldBe(visible, Duration.ofSeconds(1)));
         return this;
     }
 
@@ -30,9 +33,34 @@ public class CompanyPage {
         return this;
     }
 
-    @Step("Добавить в избранное/Убрать из избранного")
-    public CompanyPage clickFavoritesButton() {
-        addToFavoritesButton.click();
+    @Step("Перейти на вкладку отзывов")
+    public CompanyPage goToFeedback() {
+        feedbackButton.click();
+        return this;
+    }
+
+    @Step("Проверить переход на вкладку отзывов")
+    public CompanyPage checkFeedbackList() {
+        $("[data-qa='list']").shouldHave(visible);
+        return this;
+    }
+
+    @Step("Перейти на вкладку меню")
+    public CompanyPage goToMenu() {
+        sleep(2000);
+        menuButton.shouldBe(visible, Duration.ofSeconds(2)).click();
+        return this;
+    }
+
+    @Step("Проверить переход на вкладку меню")
+    public CompanyPage checkMenuList() {
+        $("[data-qa='tile-container']").shouldHave(visible);
+        return this;
+    }
+
+    @Step("Проверить наличие маркера")
+    public CompanyPage checkMarker() {
+        map.$(".sg-MapMarker__marker").shouldHave(visible);
         return this;
     }
 }

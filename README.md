@@ -19,16 +19,32 @@
 <a href="https://web.telegram.org/"><img width="5%" title="Telegram" src="media/logo/Telegram.svg"></a>
 </p>
 
+-  Java - язык программирования, на котором написан проект
+-  IntelliJ IDEA - среда разработки Java-проектов
+-  Gradle - система автоматической сборки проектов
+-  Junit5 - фреймворк для создания и управления тестами
+-  GitHub - сервис для совместной разработки и хостинга проектов
+-  Selenide - обёртка вокруг Selenium WebDriver, позволяющая быстро и просто писать тесты на UI
+-  Allure Report - гибкий инструмент для составления отчетов о тестировании
+-  Jenkins - программа, позволяющая организовать процесс непрерывной интеграции и доставки кода программного продукта, сборки
+-  Selenoid - удаленная ферма девайсов, которая позволяет запускать браузеры в docker контейнерах, записывать видео
+-  Allure TestOps - программа, позволяющее управлять как ручным, так и автоматизированным тестированием
+-  Jira - удобный инструмент для полноценного контроля за всем циклом тестирования
+-  Telegram - реализовано автоматическое оповещение о результатах прохождения автотестов
+
 
 ## :heavy_check_mark: Список проверок, реализованных в автотестах:
 
 - [x] Выбор города
-- [x] Отображение всплывающей подсказки при наведение на кнопку Фотоаппарата
-- [x] Проверка содержания заголовка сайта
-- [x] Для проверки отображения валюты применены параметризованные тесты
-- [x] Соответсвие результатов поиска дааным ввода применены параметризованные тесты
-- [x] Имеются интеграции с Jira и Allure TestOps
-
+- [x] Отображение сообщения при попытке выбора несуществующего города
+- [x] Выбор категории
+- [x] Просмотр меню
+- [x] Просмотр отзывов
+- [x] Просмотр отзыв
+- [x] Просмотр карточки компании
+- [x] Отображение маркера на карте при просмотре страницы компании
+- [x] Отображение способов авторизации
+- [x] Ввод номера телефона и возможные ошибки
 
 
 ## :heavy_check_mark: Список проверок, реализованных в ручных тестах
@@ -55,7 +71,7 @@ gradle clean test
 
 ## :triangular_flag_on_post: Allure отчеты:
 
-### <img src="media/logo/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в </a> <a target="_blank" href="https://jenkins.autotests.cloud/job/022-Soilden-tests_for_sg/8/allure/"> Allure Report</a>
+### <img src="media/logo/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в </a> <a target="_blank" href="https://jenkins.autotests.cloud/job/022-Soilden-tests_for_sg/allure/"> Allure Report</a>
 
 #### :black_small_square: Основной отчет
 <p align="center">
@@ -85,7 +101,7 @@ gradle clean test
   <img title="Allure TestOps manual tests" src="media/images/manual.png">
 </p>
 
-## <img src="media/logo/Jira.svg" width="25" height="25" alt="Jira"/>Интеграция с Jira</a>
+## <img src="media/logo/Jira.svg" width="25" height="25" alt="Jira"/>Интеграция с</a> <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1044"> Jira</a>
 <p align="center">
   <img title="Allure TestOps overview" src="media/images/jira.png">
 </p>
