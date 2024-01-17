@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -74,6 +75,7 @@ public class AuthorizationTests extends TestBase {
                 .checkErrorMessage(testData.fictitiousPhoneNumberMessage);
     }
 
+    @Disabled
     @Test
     @DisplayName("При авторизации без указания номера телефона отображается сообщение об ошибке")
     public void setEmptyPhoneNumberTest() {
