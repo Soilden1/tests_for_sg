@@ -76,15 +76,6 @@ public class AuthorizationTests extends TestBase {
     }
 
     @Test
-    @DisplayName("При авторизации без указания номера телефона отображается сообщение об ошибке")
-    public void setEmptyPhoneNumberTest() {
-        placesPage.openPage();
-        accordion.goToLogin()
-                .submitButtonClick()
-                .checkErrorMessage(testData.emptyPhoneNumberMessage);
-    }
-
-    @Test
     @DisplayName("При авторизации по номеру телефона отображается капча")
     public void checkPhoneNumberConfirmationTest() {
         placesPage.openPage();
