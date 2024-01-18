@@ -75,7 +75,6 @@ public class AuthorizationTests extends TestBase {
                 .checkErrorMessage(testData.fictitiousPhoneNumberMessage);
     }
 
-    @Disabled
     @Test
     @DisplayName("При авторизации без указания номера телефона отображается сообщение об ошибке")
     public void setEmptyPhoneNumberTest() {
