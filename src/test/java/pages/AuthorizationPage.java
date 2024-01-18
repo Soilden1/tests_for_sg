@@ -3,6 +3,8 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -35,7 +37,7 @@ public class AuthorizationPage {
 
     @Step("Нажать на кнопку авторизации")
     public AuthorizationPage submitButtonClick() {
-        submitButton.click();
+        submitButton.shouldBe(visible, Duration.ofSeconds(2)).click();
         return this;
     }
 
