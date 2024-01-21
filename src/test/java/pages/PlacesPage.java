@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Condition.editable;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class PlacesPage {
 
@@ -26,10 +25,15 @@ public class PlacesPage {
         return this;
     }
 
-    @Step("Выбрать город")
-    public PlacesPage selectCity(String city) {
+    @Step("Ввести название города")
+    public PlacesPage setCityTitle(String city) {
         selectCityButton.click();
         cityInput.shouldBe(editable, Duration.ofSeconds(4)).setValue(city).pressEnter();
+        return this;
+    }
+
+    @Step("Выбрать город")
+    public PlacesPage selectCity(String city) {
         itemsContainer.$(byText(city)).click();
         return this;
     }
@@ -40,20 +44,15 @@ public class PlacesPage {
         return this;
     }
 
-    @Step("Выбрать несуществующий город")
-    public PlacesPage selectNotExistCity(String notExistCity) {
-        selectCityButton.click();
-        cityInput.setValue(notExistCity).pressEnter();
-        step("Проверить наличие сообщения об отсутствии найденных записей", () ->
-                $("[data-qa='hint-EmptyView__title']").shouldHave(text("No records found"))); //Не найдено ни одной записи
+    @Step("Проверить отображение сообщения об отсутствии найденных записей города")
+    public PlacesPage checkNoFoundRecords() {
+        $("[data-qa='hint-EmptyView__title']").shouldHave(text("No records found")); //Не найдено ни одной записи
         return this;
     }
 
     @Step("Выбрать категорию")
     public CategoryPage selectCategory(String category) {
         categoriesList.$(byText(category)).click();
-        step("Проверить текущую категорию", () ->
-                $(".sg-CompilationViewHeader__head-title").shouldHave(text(category)));
         return new CategoryPage();
     }
 }

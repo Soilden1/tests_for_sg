@@ -20,21 +20,23 @@ public class CompanyTests extends TestBase {
     private final TestData testData = new TestData();
 
     @Test
-    @DisplayName("Просмотр карточки компании")
+    @DisplayName("Просмотреть карточку компании")
     public void viewCompanyCardTest() {
         placesPage.openPage()
+                .setCityTitle(testData.city)
                 .selectCity(testData.city)
-                .checkCity(testData.city)
                 .selectCategory(testData.categoryMuseums)
                 .selectCompany(testData.companyMuseum)
                 .checkTitle(testData.companyMuseum)
-                .viewCompanyCard();
+                .openCompanyCard()
+                .checkCompanyCard();
     }
 
     @Test
     @DisplayName("Отображается маркер на карте при просмотре страницы компании")
     public void checkCompanyMarker() {
         placesPage.openPage()
+                .setCityTitle(testData.city)
                 .selectCity(testData.city)
                 .selectCategory(testData.categoryCafe)
                 .selectCompany(testData.companyCafe)
@@ -42,9 +44,10 @@ public class CompanyTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Просмотр отзывов")
+    @DisplayName("Просмотреть отзывы")
     public void showFeedBackTest() {
         placesPage.openPage()
+                .setCityTitle(testData.city)
                 .selectCity(testData.city)
                 .selectCategory(testData.categoryPharmacies)
                 .selectCompany(testData.companyPharmacies)
@@ -53,9 +56,10 @@ public class CompanyTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Просмотр меню")
+    @DisplayName("Просмотреть меню")
     public void showMenuTest() {
         placesPage.openPage()
+                .setCityTitle(testData.city)
                 .selectCity(testData.city)
                 .selectCategory(testData.categoryCafe)
                 .selectCompany(testData.companyCafe)

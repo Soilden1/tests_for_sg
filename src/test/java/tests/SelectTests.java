@@ -23,21 +23,24 @@ public class SelectTests extends TestBase {
     @DisplayName("Выбрать город")
     public void selectCityTest() {
         placesPage.openPage()
+                .setCityTitle(testData.city)
                 .selectCity(testData.city)
                 .checkCity(testData.city);
     }
 
     @Test
-    @DisplayName("Выбор несуществующего города")
+    @DisplayName("Проверить отсутствие записей при вводе несуществующего города")
     public void selectInvalidCityTest() {
         placesPage.openPage()
-                .selectNotExistCity(testData.invalidCity);
+                .setCityTitle(testData.invalidCity)
+                .checkNoFoundRecords();
     }
 
     @Test
-    @DisplayName("Выбор категории")
+    @DisplayName("Выбрать категорию")
     public void selectCategoryTest() {
         placesPage.openPage()
-                .selectCategory(testData.categoryPharmacies);
+                .selectCategory(testData.categoryPharmacies)
+                .checkCategory(testData.categoryPharmacies);
     }
 }

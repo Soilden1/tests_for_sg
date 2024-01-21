@@ -9,21 +9,24 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
-import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class CompanyPage {
 
-    private final SelenideElement companyCard = $(".sg-Contractor__readOnly-off"),
+    private final SelenideElement companyCardButton = $(".sg-Contractor__readOnly-off"),
             companyTitle = $("[data-qa='headers-Header__mainText']"),
             feedbackButton = $("[name='tabfeedback']"),
             menuButton = $("[data-name='catalog']"),
             map = $(".mapboxgl-map");
 
     @Step("Открыть информационную карту компании")
-    public CompanyPage viewCompanyCard() {
-        companyCard.click();
-        step("Проверить открытие информационной карты компании", () ->
-                $("[templatename='SabyGetContractor/widget:Card']").shouldBe(visible, Duration.ofSeconds(1)));
+    public CompanyPage openCompanyCard() {
+        companyCardButton.click();
+        return this;
+    }
+
+    @Step("Проверить отображение информационной карты компании")
+    public CompanyPage checkCompanyCard() {
+        $("[templatename='SabyGetContractor/widget:Card']").shouldBe(visible, Duration.ofSeconds(1));
         return this;
     }
 
