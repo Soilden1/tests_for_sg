@@ -39,6 +39,7 @@ public class CompanyTests extends TestBase {
                 .setCityTitle(testData.city)
                 .selectCity(testData.city)
                 .selectCategory(testData.categoryCafe)
+                .checkCategory(testData.categoryCafe)
                 .selectCompany(testData.companyCafe)
                 .checkMarker();
     }
@@ -62,6 +63,7 @@ public class CompanyTests extends TestBase {
                 .setCityTitle(testData.city)
                 .selectCity(testData.city)
                 .selectCategory(testData.categoryCafe)
+                .checkCategory(testData.categoryCafe)
                 .selectCompany(testData.companyCafe)
                 .goToMenu()
                 .checkMenuList();

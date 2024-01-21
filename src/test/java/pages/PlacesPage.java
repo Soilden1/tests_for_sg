@@ -5,7 +5,8 @@ import io.qameta.allure.Step;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.editable;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -15,7 +16,7 @@ public class PlacesPage {
             selectCityButton = $(".sg-cityButton"),
             cityInput = $(".ClassRegionPopup__headerContainer").$("[type='text']"),
             itemsContainer = $("[data-qa='items-container']"),
-            categoriesList = $(".sg-mainWorkspace__contentRow");
+            categoriesList = $(".ws-flexbox");
 
     @Step("Открыть страницу регистрации")
     public PlacesPage openPage() {
@@ -51,7 +52,7 @@ public class PlacesPage {
 
     @Step("Выбрать категорию")
     public CategoryPage selectCategory(String category) {
-        categoriesList.$(byText(category)).shouldBe(visible, Duration.ofSeconds(6)).click();
+        categoriesList.$(byText(category)).click();
         return new CategoryPage();
     }
 }
