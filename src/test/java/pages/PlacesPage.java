@@ -15,7 +15,7 @@ public class PlacesPage {
             selectCityButton = $(".sg-cityButton"),
             cityInput = $(".ClassRegionPopup__headerContainer").$("[type='text']"),
             itemsContainer = $("[data-qa='items-container']"),
-            categoriesList = $(".ws-flexbox");
+            categoriesList = $(".sg-mainWorkspace__contentRow");
 
     @Step("Открыть страницу регистрации")
     public PlacesPage openPage() {
