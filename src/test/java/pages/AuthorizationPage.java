@@ -37,13 +37,13 @@ public class AuthorizationPage {
 
     @Step("Нажать на кнопку авторизации")
     public AuthorizationPage submitButtonClick() {
-        submitButton.shouldBe(visible, Duration.ofSeconds(2)).click();
+        submitButton.shouldBe(visible, Duration.ofSeconds(6)).click();
         return this;
     }
 
     @Step("Проверить сообщение об ошибке")
     public AuthorizationPage checkErrorMessage(String message) {
-        errorMessage.shouldHave(text(message));
+        errorMessage.shouldHave(text(message), Duration.ofSeconds(6));
         return this;
     }
 

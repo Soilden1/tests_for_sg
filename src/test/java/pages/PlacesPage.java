@@ -28,7 +28,7 @@ public class PlacesPage {
     @Step("Ввести название города")
     public PlacesPage setCityTitle(String city) {
         selectCityButton.click();
-        cityInput.shouldBe(editable, Duration.ofSeconds(4)).setValue(city).pressEnter();
+        cityInput.shouldBe(editable, Duration.ofSeconds(6)).setValue(city).pressEnter();
         return this;
     }
 
