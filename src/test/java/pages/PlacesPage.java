@@ -5,8 +5,7 @@ import io.qameta.allure.Step;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.editable;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -52,7 +51,7 @@ public class PlacesPage {
 
     @Step("Выбрать категорию")
     public CategoryPage selectCategory(String category) {
-        categoriesList.$(byText(category)).click();
+        categoriesList.$(byText(category)).shouldBe(visible, Duration.ofSeconds(6)).click();
         return new CategoryPage();
     }
 }
