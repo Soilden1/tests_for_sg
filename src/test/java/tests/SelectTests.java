@@ -14,7 +14,7 @@ import static io.qameta.allure.SeverityLevel.*;
 @Tag("Smoke")
 @Severity(BLOCKER)
 @Owner("dimacm14")
-public class SelectTests extends TestBase {
+public class SelectTests extends LocalTestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
     private final TestData testData = new TestData();

@@ -15,7 +15,7 @@ import static io.qameta.allure.SeverityLevel.BLOCKER;
 @Tag("Smoke")
 @Severity(BLOCKER)
 @Owner("dimacm14")
-public class AuthorizationTests extends TestBase {
+public class AuthorizationTests extends LocalTestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
     private final AccordionComponent accordion = new AccordionComponent();
@@ -34,8 +34,8 @@ public class AuthorizationTests extends TestBase {
     public void setIncompletePhoneNumberTest() {
         placesPage.openPage();
         accordion.goToLogin()
-                .setPhoneNumber(testData.incompletePhoneNumber)
-                .checkErrorMessage(testData.incompletePhoneNumberMessage);
+                .setPhoneNumber(testData.invalidLengthPhoneNumber)
+                .checkErrorMessage(testData.invalidLengthPhoneNumberMessage);
     }
 
     @Test
@@ -90,5 +90,15 @@ public class AuthorizationTests extends TestBase {
         accordion.goToLogin()
                 .setPhoneNumber(testData.validPhoneNumber)
                 .checkCaptcha();
+    }
+
+    @Test
+    @DisplayName("Авторизация")
+    public void logInTest() {
+        placesPage.openPage();
+        placesPage.goAuthorizationPage()
+                .logIn("wifi373", "wifi373")
+                .goProfilePage()
+                .openUserAgreement();
     }
 }

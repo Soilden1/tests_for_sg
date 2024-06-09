@@ -14,7 +14,7 @@ import static io.qameta.allure.SeverityLevel.CRITICAL;
 @Tag("Smoke")
 @Severity(CRITICAL)
 @Owner("dimacm14")
-public class CompanyTests extends TestBase {
+public class CompanyTests extends LocalTestBase {
 
     private final PlacesPage placesPage = new PlacesPage();
     private final TestData testData = new TestData();
@@ -34,7 +34,7 @@ public class CompanyTests extends TestBase {
 
     @Test
     @DisplayName("Отображается маркер на карте при просмотре страницы компании")
-    public void checkCompanyMarker() {
+    public void checkCompanyMarkerTest() {
         placesPage.openPage()
                 .setCityTitle(testData.city)
                 .selectCity(testData.city)

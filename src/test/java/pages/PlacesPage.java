@@ -16,12 +16,17 @@ public class PlacesPage {
             selectCityButton = $(".sg-cityButton"),
             cityInput = $(".ClassRegionPopup__headerContainer").$("[type='text']"),
             itemsContainer = $("[data-qa='items-container']"),
-            categoriesList = $(".ws-flexbox");
+            categoriesList = $(".ws-flexbox"),
+            authButton = $("[data-qa='Войти']"),
+            profileButton = $("[data-qa='Профиль']"),
+            emptyMessageArea = $("[data-qa='hint-EmptyView__title']"),
+            userAgreement = $(".sg-Footer__userAgreement"),
+            userAgreementTitle = $("[data-qa='docview3-CommandPanel__rename']");
 
     @Step("Открыть страницу регистрации")
     public PlacesPage openPage() {
         open("");
-        headerTitle.shouldHave(text("Places and services")); //Места и услуги
+        headerTitle.shouldHave(text("Места и услуги")); //Места и услуги Places and services
         return this;
     }
 
@@ -46,7 +51,7 @@ public class PlacesPage {
 
     @Step("Проверить отображение сообщения об отсутствии найденных записей города")
     public PlacesPage checkNoFoundRecords() {
-        $("[data-qa='hint-EmptyView__title']").shouldHave(text("No records found")); //Не найдено ни одной записи
+        emptyMessageArea.shouldHave(text("Не найдено ни одной записи")); //Не найдено ни одной записи No records found
         return this;
     }
 
@@ -54,5 +59,30 @@ public class PlacesPage {
     public CategoryPage selectCategory(String category) {
         categoriesList.$(byText(category)).click();
         return new CategoryPage();
+    }
+
+    @Step("Перейти на страницу авторизации")
+    public AuthorizationPage goAuthorizationPage() {
+        authButton.click();
+        return new AuthorizationPage();
+    }
+
+    @Step("Перейти на страницу профиля")
+    public ProfilePage goProfilePage() {
+        profileButton.click();
+        return new ProfilePage();
+    }
+
+    @Step("Открыть пользовательское соглашение")
+    public void openUserAgreement() {
+        userAgreement.click();
+        userAgreementTitle.shouldHave(text("Пользовательское соглашение сайта.docx"));
+    }
+
+    @Step("Открыть страницу заведения")
+    public CompanyPage openCompanyPage(String title) {
+        $("[title='" + title + "']").click();
+        sleep(1000);
+        return new CompanyPage();
     }
 }

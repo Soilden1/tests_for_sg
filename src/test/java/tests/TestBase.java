@@ -19,7 +19,7 @@ public class TestBase {
     @BeforeAll
     static void setUp() {
         Configuration.pageLoadStrategy = "eager";
-        Configuration.baseUrl = System.getProperty("baseUrl", "https://sabyget.ru/");
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://fix.sabyget.ru/");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "100");

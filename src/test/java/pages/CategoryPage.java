@@ -14,11 +14,12 @@ import static com.codeborne.selenide.Selenide.$;
 public class CategoryPage {
 
     private final SelenideElement companyInput = $(byTagName("input")),
-            companyList = $("[data-qa='items-container']");
+            companyList = $("[data-qa='items-container']"),
+            categoryList = $(".sg-CompilationViewHeader__head-title");
 
     @Step("Проверить текущую категорию")
     public CategoryPage checkCategory(String category) {
-        $(".sg-CompilationViewHeader__head-title").shouldHave(text(category));
+        categoryList.shouldHave(text(category));
         return this;
     }
 
