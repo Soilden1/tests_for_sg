@@ -15,7 +15,7 @@ public class LocalTestBase {
     @BeforeAll
     static void setUp() {
         Configuration.pageLoadStrategy = "eager";
-        Configuration.baseUrl = "https://test.sabyget.ru/";
+        Configuration.baseUrl = "https://fix.sabyget.ru/";
         Configuration.browserSize = "1920x1080";
         Configuration.browser = "chrome";
         Configuration.holdBrowserOpen = false;

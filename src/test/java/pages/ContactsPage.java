@@ -60,5 +60,4 @@ public class ContactsPage {
         messageList.shouldHave(text(message));
         return this;
     }
-
 }
